@@ -2,26 +2,17 @@ from tkinter import *
 import pandas as pd
 
 def submit_fields():
-    
-    
-    # path = 'merge.xlsx'
-    # df1 = pd.read_excel(path)
-    # SeriesA = df1['Operator']
-    # SeriesB = df1['Number']
-    # A = pd.Series(entry1.get())
-    # B = pd.Series(entry2.get())
-    # SeriesA = SeriesA.append(A)
-    # SeriesB = SeriesB.append(B)
     excel1 = entry1.get()
     excel2 = entry2.get()
+    a = 'b.xlsx'
     df1 = pd.read_excel(excel1)
+    print(df1)
     df2 = pd.read_excel(excel2)
-    values1 = df1['EmployeeID','Team','Subteam','First Name','Last Name','DCPDS Employee Name','Function (job title)','CAO Shop Code','MAO Code','Source','ORG (NAVAIR or Company name goes here)','COMML (phone number)','Email ','Site(e.g. "FRCSW")','Room, WS, or Office (Room, Cube or Office)','Building - Floor']
-    values2 = df2['EmployeeID','Team','Subteam','First Name','Last Name','DCPDS Employee Name','Function (job title)','CAO Shop Code','MAO Code','Source','ORG (NAVAIR or Company name goes here)','COMML (phone number)','Email ','Site(e.g. "FRCSW")','Room, WS, or Office (Room, Cube or Office)','Building - Floor']
+    values1 = df1['EmployeeID','Team','Subteam','First Name','Last Name','DCPDS Employee Name','Function (job title)','CAO Shop Code','MAO Code','Source','ORG (NAVAIR or Company name goes here)','COMML (phone number)','Email','Site(e.g. "FRCSW")']
+    values2 = df2['EmployeeID','Team','Subteam','First Name','Last Name','DCPDS Employee Name','Function (job title)','CAO Shop Code','MAO Code','Source','ORG (NAVAIR or Company name goes here)','COMML (phone number)','Email','Site(e.g. "FRCSW")']
     dataframes = [values1, values2]
     join = pd.concat(dataframes)
     join.to_excel("merge.xlsx")
-   # writer.save()
     entry1.delete(0, END)
     entry2.delete(0, END)
 root = Tk()
