@@ -16,7 +16,6 @@ def submit_fields():
     entry1.delete(0, END)
     entry2.delete(0, END)
 root = Tk()
-
 Label(root, text="File1").grid(row=0)
 Label(root, text="File2").grid(row=1)
 entry1 = Entry(root)
