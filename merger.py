@@ -8,8 +8,8 @@ def submit_fields():
     df1 = pd.read_excel(excel1,sheet_name=1)
     print(df1)
     df2 = pd.read_excel(excel2,sheet_name=1)
-    values1 = df1['EmployeeID','Team']#,'Team','Subteam','First Name','Last Name','DCPDS Employee Name','Function (job title)','CAO Shop Code','MAO Code','Source','ORG (NAVAIR or Company name goes here)','COMML (phone number)','Email','Site(e.g. "FRCSW")']
-    values2 = df2['EmployeeID','Team']#,'Team','Subteam','First Name','Last Name','DCPDS Employee Name','Function (job title)','CAO Shop Code','MAO Code','Source','ORG (NAVAIR or Company name goes here)','COMML (phone number)','Email','Site(e.g. "FRCSW")']
+    values1 = df1['EmployeeID']#,'Team','Subteam','First Name','Last Name','DCPDS Employee Name','Function (job title)','CAO Shop Code','MAO Code','Source','ORG (NAVAIR or Company name goes here)','COMML (phone number)','Email','Site(e.g. "FRCSW")']
+    values2 = df2['EmployeeID']#,'Team','Subteam','First Name','Last Name','DCPDS Employee Name','Function (job title)','CAO Shop Code','MAO Code','Source','ORG (NAVAIR or Company name goes here)','COMML (phone number)','Email','Site(e.g. "FRCSW")']
     dataframes = [values1, values2]
     join = pd.concat(dataframes)
     join.to_excel("merge.xlsx")
